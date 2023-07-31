@@ -1,5 +1,8 @@
 import './App.css';
 import { useState } from 'react';
+import QuestionComponent from './Components/QuestionComponent';
+import PlayerInfoComponent from './Components/PlayerInfoComponent';
+
 
 let App = () => {
   let [points, setPoints] = useState(0)
@@ -23,7 +26,8 @@ let App = () => {
 
   return (
     <div className="App">
-      <h1>Trivial</h1>
+      <PlayerInfoComponent points={points}/>
+      <QuestionComponent questions={questions} points={points} setPoints={setPoints} />
     </div>
   );
 }
